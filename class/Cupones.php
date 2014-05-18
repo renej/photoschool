@@ -18,21 +18,21 @@ class Cupones extends CrudModel {
         $this->simple_query();
     }
 
-    public function add($cupones = array()) {
+    public function add($cupon = array()) {
         $this->query = "INSERT INTO cupones (descuento, fecha_inicio, fecha_fin, id_usuario, tipo_usuario, cupon, estatus)
         VALUES (:descuento, :fecha_inicio, :fecha_fin, :id_usuario, :tipo_usuario, :cupon, :estatus)";
-        $this->dynamic_query($cupones, true);
+        $this->dynamic_query($cupon, true);
     }
 
-    public function edit($cupones = array()) {
+    public function edit($cupon = array()) {
         $this->query = "UPDATE cupones SET descuento = :descuento, fecha_inicio = :fecha_inicio, fehca_fin = :fecha_fin,
         id_usuario = :id_usuario, tipo_usuario = :tipo_usuario, cupo = :cupon, estatus = :estatus";
-        $this->dynamic_query($cupones, true);
+        $this->dynamic_query($cupon, true);
     }
 
-    public function delete($cupones = array()) {
+    public function delete($cupon = array()) {
         $this->query = "DELETE FROM cupones WHERE id = :id";
-        $this->dynamic_query($cupones, true);
+        $this->dynamic_query($cupon, true);
     }
 
 } 
