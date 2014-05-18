@@ -25,7 +25,7 @@ class Colegios extends CrudModel {
 
     public function edit($colegio = array()) {
         $this->query = "UPDATE colegios SET colegio = :colegio, calle = :calle, colonia = :colonia, ciudad = :ciudad,
-        estado = :estado, cp = :cp, telefono = :telefono, correo = :correo, contacto = :contacto WHERE ";
+        estado = :estado, cp = :cp, telefono = :telefono, correo = :correo, contacto = :contacto WHERE id = :id";
         $this->dynamic_query($colegio, true);
     }
 

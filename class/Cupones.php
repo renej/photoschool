@@ -26,7 +26,7 @@ class Cupones extends CrudModel {
 
     public function edit($cupon = array()) {
         $this->query = "UPDATE cupones SET descuento = :descuento, fecha_inicio = :fecha_inicio, fehca_fin = :fecha_fin,
-        id_usuario = :id_usuario, tipo_usuario = :tipo_usuario, cupo = :cupon, estatus = :estatus";
+        id_usuario = :id_usuario, tipo_usuario = :tipo_usuario, cupo = :cupon, estatus = :estatus WHERE id = :id";
         $this->dynamic_query($cupon, true);
     }
 

@@ -25,7 +25,7 @@ class Galerias extends CrudModel {
 
     public function edit($galeria = array()) {
         $this->query = "UPDATE galerias SET id_colegio = :id_colegio, fecha = :fecha, ruta = :ruta, nombre = :nombre,
-        descripcion = :descripcion, id_usuario = :id_usuario";
+        descripcion = :descripcion, id_usuario = :id_usuario WHERE id = :id";
         $this->dynamic_query($galeria, true);
     }
 
