@@ -29,9 +29,9 @@ class Galerias extends CrudModel {
         $this->dynamic_query($galeria, true);
     }
 
-    public function delete($galeria = array()) {
+    public function delete($id = array()) {
         $this->query = "DELETE FROM galerias WHERE id = :id";
-        $this->dynamic_query($galeria, true);
+        $this->dynamic_query($id, true);
     }
 
 } 
