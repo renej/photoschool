@@ -11,14 +11,14 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 $cupon = new Cupones();
 
-$descuento          = $_POST['descuento'];
-$inicio             = $_POST['fecha_inicio'];
-$fin                = $_POST['fecha_fin'];
-$usuario            = $_POST['id_usuario'];
-$tipo_usuario       = $_POST['tipo_usuario'];
-$cupon_nombre       = $_POST['cupon'];
-$estatus            = $_POST['estatus'];
-$accion             = $_POST['accion'];
+$descuento              = $_POST['descuento'];
+$inicio                 = $_POST['fecha_inicio'];
+$fin                    = $_POST['fecha_fin'];
+$usuario                = $_POST['id_usuario'];
+$tipo_usuario           = $_POST['tipo_usuario'];
+$cupon_nombre           = $_POST['cupon'];
+$estatus                = $_POST['estatus'];
+$accion                 = $_POST['accion'];
 
 $params = array(
     'descuento'         => $descuento,
