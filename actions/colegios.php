@@ -5,8 +5,8 @@
  * Date: 20/05/14
  * Time: 09:55 PM
  */
+
 require '../class/Colegios.php';
-$colegio = new Colegios();
 
 $nombre_colegio         = $_POST['colegio'];
 $calle                  = $_POST['calle'];
@@ -32,5 +32,9 @@ $params = array(
 );
 
 if($accion == 'agregar') {
-    $colegio->add($params);
+    $colegio = new Colegios($params);
+    $crear = $colegio->create();
+    if($crear) {
+        header('location: ../admin/colegio.php');
+    }
 }

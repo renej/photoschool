@@ -8,7 +8,6 @@
 require '../class/Precios.php';
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
-$precio = new Precios();
 
 $tipo               = $_POST['tipo'];
 $descripcion        = $_POST['descripcion'];
@@ -22,5 +21,9 @@ $params = array(
 );
 
 if($accion == 'agregar') {
-    $precio->add($params);
+    $precio = new Precios($params);
+    $crear = $precio->create();
+    if($crear) {
+        header('location: ../admin/precio.php');
+    }
 }

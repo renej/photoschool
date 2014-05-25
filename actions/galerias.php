@@ -9,7 +9,7 @@
 require '../class/Galerias.php';
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
-$galeria = new Galerias();
+
 
 $id_colegio         = $_POST['id_colegio'];
 $fecha              = $_POST['fecha'];
@@ -29,6 +29,9 @@ $params = array(
 );
 
 if($accion == 'agregar') {
-    var_dump($params);
-    $galeria->add($params);
+    $galeria = new Galerias($params);
+    $crear = $galeria->create();
+    if($crear) {
+        header('location: ../admin/galeria.php');
+    }
 }

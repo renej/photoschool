@@ -6,9 +6,6 @@
  * Time: 07:41 PM
  */
 require '../class/Usuarios.php';
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-$usuario = new Usuarios();
 
 $matricula              = $_POST['matricula'];
 $tipo_usuario           = $_POST['tipo_usuario'];
@@ -30,5 +27,9 @@ $params = array(
 );
 
 if($accion == 'agregar') {
-    $usuario->add($params);
+    $usuario = new Usuarios($params);
+    $crear = $usuario->create();
+    if($crear) {
+        header('location: ../admin/usuario.php');
+    }
 }

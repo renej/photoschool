@@ -7,9 +7,6 @@
  */
 
 require '../class/Cupones.php';
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-$cupon = new Cupones();
 
 $descuento              = $_POST['descuento'];
 $inicio                 = $_POST['fecha_inicio'];
@@ -31,5 +28,9 @@ $params = array(
 );
 
 if($accion == 'agregar') {
-   $cupon->add($params);
+    $cupon = new Cupones($params);
+    $crear = $cupon->create();
+    if($crear) {
+        header('location: ../admin/cupon.php');
+    }
 }
