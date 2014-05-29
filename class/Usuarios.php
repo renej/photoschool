@@ -5,7 +5,7 @@
  * Date: 18/05/14
  * Time: 06:45 PM
  */
-require 'easyCRUD.class.php';
+require_once 'easyCRUD.class.php';
 class Usuarios extends Crud {
     protected $table = 'usuarios';
     protected $id = 'id';

@@ -5,7 +5,7 @@
  * Date: 21/05/14
  * Time: 08:21 PM
  */
-require '../class/Precios.php';
+require_once '../class/Precios.php';
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 

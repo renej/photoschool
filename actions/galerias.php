@@ -7,14 +7,12 @@
  */
 
 require '../class/Galerias.php';
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-
 
 $id_colegio         = $_POST['id_colegio'];
 $fecha              = $_POST['fecha'];
-$ruta               = '/ruta/a/mi/archivo/';
 $nombre             = $_POST['nombre'];
+$carpeta            = str_replace(" ", "_", strtolower($nombre));
+$ruta               = '../galerias/'.$carpeta.'/';
 $descripcion        = $_POST['descripcion'];
 $id_usuario         = $_POST['id_usuario'];
 $accion             = $_POST['accion'];
@@ -29,6 +27,7 @@ $params = array(
 );
 
 if($accion == 'agregar') {
+    mkdir($ruta, 0775, true);
     $galeria = new Galerias($params);
     $crear = $galeria->create();
     if($crear) {

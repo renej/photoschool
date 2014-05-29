@@ -17,9 +17,21 @@ $revistas = $revista->all();
 </head>
 <body>
     <div class="row">
+        <div class="large-6 columns">
+            <img src="../img/logo_small.png" alt="Logo" width="200" height="41"/>
+        </div>
+        <div class="large-6 columns">
+            <p class="text-right">
+                Bienvenido: <?= $_SESSION['nombre']; ?><br/>
+                <a href="../actions/logout.php" class="text-right">Salir</a>
+            </p>
+        </div>
+    </div>
+    <div class="row">
         <ul class="breadcrumbs">
             <li><a href="colegio.php">Colegios</a></li>
             <li><a href="cupon.php">Cupones</a></li>
+            <li><a href="foto.php">Fotos</a></li>
             <li><a href="galeria.php">Galerias</a></li>
             <li><a href="precio.php">Precio</a></li>
             <li class="current">Revista</li>
@@ -46,6 +58,10 @@ $revistas = $revista->all();
                     ?>
                 </tbody>
             </table>
+            <form action="../actions/revistas.php" method="post">
+                <input type="hidden" name="accion" value="exportar"/>
+                <input class="button [tiny small large]" type="submit" value="Exportar Excel"/>
+            </form>
         </div>
     </div>
     <!--<form action="../actions/revistas.php" method="post">

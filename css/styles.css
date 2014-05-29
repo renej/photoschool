@@ -1,0 +1,14 @@
+body{
+    background-image: url('../img/bg.png');
+    background-repeat: repeat-x;
+}
+
+#formulario{
+    margin: 0 auto;
+}
+
+.logo{
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 330px;
+}
